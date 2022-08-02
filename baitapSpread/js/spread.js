@@ -1,10 +1,10 @@
 const getElement = (id) => {
     return document.getElementById(id)
 }
-const hoverText = (text) => {
-    var fsize = text.style.fontSize;
+const hoverText = (id) => {
+    var fsize = getElement(id).style.fontSize;
     var newSize = +fsize.replace('px', '') + 10;
-    text.style.fontSize = newSize + 'px';
+    getElement(id).style.fontSize = newSize + 'px';
     return newSize
 
 }
@@ -16,13 +16,10 @@ textSeparate.splice(5, 1)
 console.log(textSeparate)
 
 let html = '';
-for (let i = 0; i < textSeparate.length; i++) {
-
-    let value = textSeparate[i];
+for(value of textSeparate){
     html += `
-        <span>${value}</span>
-    `
+         <span>${value}</span>
+     `
     getElement('heading').innerHTML = html;
-
 }
 

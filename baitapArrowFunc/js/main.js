@@ -1,9 +1,9 @@
 const colorarr = ['pallet', 'viridian', 'pewter', 'cerulean', 'vermillion', 'lavender', 'celadon', 'saffron', 'fuschia', 'cinnabar']
 const colorList = (arr) => {
     let html = '';
-    for (let i = 0; i < arr.length; i++) {
+    for (value of arr) {
         html += `
-            <button class = "color-button ${arr[i]}" onclick="changeColorHouse('${arr[i]}') "></button>
+            <button class = "color-button ${value}" onclick="changeColorHouse('${value}') "></button>
         `
     }
     document.querySelector('#colorContainer').innerHTML = html;
@@ -14,14 +14,13 @@ window.onload = function () {
 }
 
 const changeColorHouse = (colochange) => {
-    for (let i = 0; i < colorarr.length; i++) {
-        if (colorarr[i] === colochange) {
-            const colorValue = colorarr[i]
+    for( value of colorarr){
+        if(value ===colochange){
+            const colorValue = value
             let element = document.getElementById('house');
             element.className = 'house' + ' ' + colorValue
-          
         }
     }
-    return colochange
+    return colorValue
 
 }

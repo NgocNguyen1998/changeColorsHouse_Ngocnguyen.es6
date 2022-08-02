@@ -21,6 +21,7 @@ class HocSinh {
         return (sum + total1) / (3 + param.length)
 
     }
+   
 }
 
 const getElement = (id) => {
